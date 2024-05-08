@@ -20,8 +20,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.descuentosapp.components.MainButton
 import com.example.descuentosapp.components.MainTextField
 import com.example.descuentosapp.components.SpaceH
+import com.example.descuentosapp.components.TwoCards
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,17 +46,32 @@ fun ContentHomeView(paddingValues: PaddingValues) {
         .padding(paddingValues)
         .padding(10.dp)
         .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
+        //verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         var precio by remember { mutableStateOf("") }
         var descuento by remember { mutableStateOf("") }
-        
+        var precioDescuento by remember { mutableStateOf(0.0) }
+        var totalDescuento by remember { mutableStateOf(0.0) }
+
+        TwoCards(
+            title1 = "Total",
+            number1 = totalDescuento ,
+            title2 = "Descuento",
+            number2 = precioDescuento
+        )
         MainTextField(value = precio, onValueChange = {precio = it}, label = "Precio")
         SpaceH()
         MainTextField(value = descuento, onValueChange = {descuento = it}, label = "Descuento")
         SpaceH(10.dp)
-
+        MainButton(text = "Generar Descuento") {
+            
+        }
+    SpaceH()
+        MainButton(text = "Limpiar", color = Color.Red) {
+            
+        }
+        
     }
 
 }

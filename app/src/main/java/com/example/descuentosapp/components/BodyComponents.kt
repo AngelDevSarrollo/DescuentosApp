@@ -54,7 +54,6 @@ fun MainButton(text: String, color:Color = MaterialTheme.colorScheme.primary, on
             .padding(horizontal = 30.dp)
         ) {
         Text(text = text)
-        
     }
 
 }
