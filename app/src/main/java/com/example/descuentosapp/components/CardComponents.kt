@@ -38,7 +38,6 @@ fun TwoCards(title1: String, number1: Double, title2: String, number2: Double){
 
     }
 }
-
 @Composable
 fun MainCard(title: String, number: Double, modifier: Modifier = Modifier){
     Card(
@@ -55,6 +54,5 @@ fun MainCard(title: String, number: Double, modifier: Modifier = Modifier){
             Text(text = title, color = Color.Black, fontSize = 20.sp)
             Text(text = "€$number", color = Color.Black, fontSize = 20.sp)
         }
-
     }
 }
