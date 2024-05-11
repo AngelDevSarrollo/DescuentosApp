@@ -39,7 +39,6 @@ fun HomeView(){
     }
 
 }
-
 @Composable
 fun ContentHomeView(paddingValues: PaddingValues) {
     Column(modifier = Modifier
@@ -65,14 +64,23 @@ fun ContentHomeView(paddingValues: PaddingValues) {
         MainTextField(value = descuento, onValueChange = {descuento = it}, label = "Descuento")
         SpaceH(10.dp)
         MainButton(text = "Generar Descuento") {
+            precioDescuento = calcularPrecio(precio.toDouble(),descuento.toDouble())
+            totalDescuento = calcularDescuento(precio.toDouble(),descuento.toDouble())
             
         }
     SpaceH()
         MainButton(text = "Limpiar", color = Color.Red) {
             
         }
-        
     }
+}
+fun calcularPrecio(precio:Double, descuento:Double):Double{
+    val res = precio - calcularDescuento(precio, descuento)
+    return kotlin.math.round(res*100)/100.0
 
 }
+fun calcularDescuento(precio:Double, descuento:Double):Double{
+    val res = precio * (1- descuento /100)
+    return kotlin.math.round(res*100)/100.0
 
+}
