@@ -70,6 +70,10 @@ fun ContentHomeView(paddingValues: PaddingValues) {
         }
     SpaceH()
         MainButton(text = "Limpiar", color = Color.Red) {
+            precio = ""
+            descuento = ""
+            precioDescuento = 0.0
+            totalDescuento = 0.0
             
         }
     }
