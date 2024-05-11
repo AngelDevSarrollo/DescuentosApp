@@ -38,7 +38,6 @@ fun HomeView(){
     }) {
         ContentHomeView(it)
     }
-
 }
 @Composable
 fun ContentHomeView(paddingValues: PaddingValues) {
